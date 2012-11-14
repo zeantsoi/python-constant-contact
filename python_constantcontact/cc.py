@@ -289,5 +289,5 @@ class Api(object):
 
     def _establish_connection(self):
 
-        self._connection = httplib2.Http()
+        self._connection = httplib2.Http(disable_ssl_certificate_validation=True)
         self._connection.add_credentials(self._login, self._password)
